@@ -1,0 +1,16 @@
+---
+- name: install apache
+  hosts: all
+  become: true
+
+  tasks:
+    - name: install apache
+      ansible.builtin.yum:
+        name: apache2
+        state: latest
+      when: ansible_distribution == "Amazon Linux" and ansible_distrubtion == "2023"
+
+    - name: update chache
+      ansible.builtin.yum:
+        update_cache: yes
+      when: ansible_distribution == "Amazon Linux"

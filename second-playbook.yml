@@ -1,0 +1,17 @@
+---
+- name: create folder on target machine
+  hosts: all
+  become: true
+
+  tasks:
+    #  - name: create a folder
+    # command: mkdir folder3
+
+    #- name: move to the above created folder and create a file
+    # command: touch folder2/file2.txt
+    
+    - name: move to folder1
+      shell: 
+       cmd: sudo su 
+       chdir: folder1
+       creates: file3.txt
