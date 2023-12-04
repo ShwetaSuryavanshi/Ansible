@@ -1,0 +1,15 @@
+---
+- name: Loops
+  hosts: DBservers
+  become: true
+  vars:
+    create:
+      - file5.txt
+      - file6.txt
+
+  tasks:
+    - name: loops
+      command: touch "{{ item }}"
+      with_items: "{{ create }}"
+
+

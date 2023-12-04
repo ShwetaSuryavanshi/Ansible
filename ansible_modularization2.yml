@@ -1,0 +1,13 @@
+---
+- name: ansible modularization
+  hosts: all
+  become: true
+  vars:
+    create2:
+      - file3.csv
+      - file4.csv
+
+  tasks:
+    - name: ansible module
+      command: touch "{{ item }}"
+      with_items: "{{ create2 }}"

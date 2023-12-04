@@ -1,0 +1,11 @@
+---
+- name: Ansible Error Handling
+  hosts: all
+  become: true
+
+  tasks:
+    - name: create file in the error directory which doesn't exist on target machine
+      command: touch error/txt1.txt
+      ignore_errors: true
+    - name: create a file in the error2 directory which exist on the target machine
+      command: touch error2/txt2.txt

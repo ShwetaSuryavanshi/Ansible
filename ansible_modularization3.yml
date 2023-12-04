@@ -1,0 +1,8 @@
+---
+- name: final module
+  hosts: all
+  become: true
+
+  tasks:
+    -  include_tasks: ansible_modularization1.yml
+    #    -  include_tasks: ansible_modularization2.yml

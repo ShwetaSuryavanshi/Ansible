@@ -1,0 +1,4 @@
+---
+- name: webserver task1
+  shell: touch /home/ec2-user/webserver1.txt
+

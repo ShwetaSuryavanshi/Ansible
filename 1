@@ -1,0 +1,13 @@
+---
+- name: Copy the file from one folder to another
+  hosts: all
+  become: true
+
+  tasks:
+    - name: create file
+      command: touch copiedAnsiblefile1.txt
+      command: pwd
+    - name: copy above file in folder1
+      copy:
+        src: copiedAnsiblefile1.txt
+        dest: /folder1

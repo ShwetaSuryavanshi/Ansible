@@ -1,0 +1,15 @@
+---
+- name: look up
+  hosts: all
+  become: true
+  vars:
+    s: "{{ lookup('csvfile', '1 file=lookup.csv delimiter=,') }}"
+    p: "{{ lookup('csvfile', '2 file=lookup.csv delimiter=,') }}"
+
+  tasks:
+    - debug:
+        msg: "Hello {{ s }}"
+    - debug:
+        msg: "Hello {{ p }}"
+    - name: csv file
+      command: touch lookup.csv

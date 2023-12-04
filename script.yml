@@ -1,0 +1,8 @@
+---
+- name: execute script file on Ansible which creates the file and also displays the data accordingly
+  hosts: all
+  become: true
+
+  tasks:
+    - name: execute the script
+      script: script1.sh Shweta 

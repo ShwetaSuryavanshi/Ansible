@@ -1,0 +1,10 @@
+---
+- name: ansible modularization
+  hosts: all
+  become: true
+
+  tasks:
+    - name: ansible modularization
+      command: touch file1.csv
+
+

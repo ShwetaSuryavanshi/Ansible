@@ -1,0 +1,13 @@
+---
+- name: Copy the file from host/local machine  to remote/target machine
+  hosts: all
+  become: true
+
+  tasks:
+    - name: copy file in folder1
+      copy:
+        src: /home/ec2-user/Ansible/copiedAnsiblefile1.txt
+        dest: /home/ec2-user/folder1
+        owner: root
+        group: root
+        mode: 0777

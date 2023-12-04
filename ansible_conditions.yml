@@ -1,0 +1,28 @@
+---
+- name: ansible conditions
+  hosts: all
+  become: true
+  vars:
+    age: 19
+
+  tasks:
+    - name: ansible conditions
+      command: touch /home/ec2-user/folder3/text1.txt
+      when: age>18
+      
+    - name: ansible condtion2   
+      command: touch /home/ec2-user/folder3/text2.txt
+      when: age<18
+
+    - name: ansible conditions
+      command: touch /home/ec2-user/folder3/text3.txt
+      when: age==18
+
+    - name: ansible conditions
+      command: touch /home/ec2-user/folder3/text4.txt
+      when: age>18 and age<20
+
+ 
+
+
+

@@ -1,0 +1,5 @@
+- name: ansible_roles
+  hosts: DBservers
+  roles:
+    - php
+    - webservers

@@ -1,0 +1,10 @@
+---
+- name: variables
+  hosts: all
+  become: true
+  vars:
+    sevicename: apache2
+  tasks:
+    - name: variable
+      service: name={{ servicename }} state=started
+

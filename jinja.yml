@@ -1,0 +1,49 @@
+---
+- name: Jinja
+  hosts: all
+  become: true
+  vars:
+    name: shweta
+    dummy_list:
+      - 10
+      - 20
+      - 30
+      - 40
+    dummy_list2:
+      - 20
+      - 60
+      - 70
+      - 30
+  
+  
+  tasks:
+    - debug:
+       msg: "Hello world"
+    - debug:
+       msg: "Hello {{ name }}"
+    - debug:
+       msg: "Hello {{ name |replace('shweta','Sanjana') }}"
+    - debug:
+       msg: "Hello {{ name | upper }}"
+    - debug:
+       msg: "Hello {{ name | lower }}"
+    - debug:
+       msg: "Hello {{ dummy_list | max }}"
+    - debug:
+       msg: "Hello {{ dummy_list | min }}"
+    - debug:
+       msg: "Hello {{ dummy_list | unique }}"
+    - debug:
+       msg: "Hello {{ dummy_list | union(dummy_list2) }}"
+    - debug:
+       msg: "Hello {{ dummy_list | intersect(dummy_list2) }}"
+    - debug:
+       msg: "{{ 100 | random }}"
+
+
+
+
+
+
+
+

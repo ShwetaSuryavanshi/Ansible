@@ -1,0 +1,10 @@
+---
+- name: service module
+  hosts: DBservers
+  become: true
+
+  tasks:
+    - name: service module
+      service:
+       name: apache2
+       state: stopped      

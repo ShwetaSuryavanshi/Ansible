@@ -1,0 +1,6 @@
+---
+- name: php task1
+  shell: touch /home/ec2-user/php1.txt
+
+- name: php task2
+  command: touch /home/ec2-user/php2.txt

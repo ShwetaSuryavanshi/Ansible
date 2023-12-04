@@ -1,0 +1,6 @@
+--- 
+- name: sql server
+  command: touch /home/ec2-user/sqlserver1.txt
+- name: sql server2
+  command: touch /home/ec2-user/sqlserver2.txt
+
